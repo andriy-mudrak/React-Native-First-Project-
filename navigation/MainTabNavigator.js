@@ -3,13 +3,13 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HelloWorldScreen from '../screens/HelloWorldScreen';
-//import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import Greeting from '../screens/Greeting';
+import AboutDeveloper from '../screens/AboutDeveloper';
 
 const HomeStack = createStackNavigator({
-  Home: HelloWorldScreen,
+  Home: Greeting,
 });
+
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Hello',
@@ -40,7 +40,7 @@ LinksStack.navigationOptions = {
 };
 */
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: AboutDeveloper,
 });
 
 SettingsStack.navigationOptions = {
@@ -48,7 +48,7 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={Platform.OS === 'ios' ? 'ios-person' : 'md-person'}
     />
   ),
 };
